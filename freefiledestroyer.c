@@ -1,5 +1,5 @@
 /*
-Available platform identfer
+Available platform identifier
 MS_WINDOWS - 32 bit Microsoft Windows and 64 bit Microsoft Windows
 UNIX_32 - 32 bit Unix like system
 UNIX_64 - 64 bit Unix like system

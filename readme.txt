@@ -2,7 +2,7 @@
 
                 Securely file destroy tool by Popov Evgeniy Alekseyevich             
 
-                           Version 1.1.3
+                           Version 1.1.3.0.1
 
 System requirement
 
@@ -35,16 +35,16 @@ Source code
 The program source code was compiled under Open Watcom.
 But you can do it under any modern C compiler.
 
-Installation and uninstallation under Linux
+Install and uninstall under Linux
 
 Installation steps:
 
 1.Extract content of source code archive.
-2.Open sdcopy.c file and change platform identifer. Save changes.
+2.Open freefiledestroyer.c file and change platform identifier. Save changes.
 3.Open terminal and go to source code directory.
 4.Run: make install
 
-Uninstallation steps:
+Uninstall steps:
 
 1.Extract content of source code archive.
 2.Open terminal and go to source code directory.
@@ -75,3 +75,4 @@ Version history
 1.0.8 - Small changes.
 1.0.9 - Erasing algorithm has been changed.
 1.1 - 1.1.3 - Small changes.
+1.1.3.0.1 – Documentation was updated.
