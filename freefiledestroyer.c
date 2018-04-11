@@ -8,12 +8,12 @@ UNIX_64 - 64 bit Unix like system
 #include "freefiledestroyer.h"
 
 void intro();
-void show_progress(long long int start, long long int end);
-long long int get_file_size(int target);
-int open_input_file(char *name);
-char *get_memory(long int size);
-void corrupt_file(char *target);
-void delete_file(char *target);
+void show_progress(const long long int start,const long long int end);
+long long int get_file_size(const int target);
+int open_input_file(const char *name);
+char *get_memory(const size_t size);
+void corrupt_file(const char *target);
+void delete_file(const char *target);
 
 int main(int argc, char *argv[])
 {
@@ -34,13 +34,13 @@ void intro()
 {
  printf("\n");
  puts("FREE FILE DESTROYER");
- puts("Version 1.1.3");
- puts("Securely file destroy tool by Popov Evgeniy Alekseyevich,2012-2016 year");
+ puts("Version 1.1.4");
+ puts("Securely file destroy tool by Popov Evgeniy Alekseyevich,2012-2018 year");
  puts("This program distributed under GNU GENERAL PUBLIC LICENSE");
  printf("\n");
 }
 
-void show_progress(long long int start, long long int end)
+void show_progress(const long long int start,const long long int end)
 {
  long long int progress;
  progress=start+1;
@@ -50,7 +50,7 @@ void show_progress(long long int start, long long int end)
  printf("Amount of processed bytes: %lld from %lld. Progress:%lld%%",start,end,progress);
 }
 
-long long int get_file_size(int target)
+long long int get_file_size(const int target)
 {
  long long int length;
  length=file_seek(target,0,SEEK_END);
@@ -58,7 +58,7 @@ long long int get_file_size(int target)
  return length;
 }
 
-int open_input_file(char *name)
+int open_input_file(const char *name)
 {
  int file;
  file=open(name,TARGET_FILE_MODE,S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
@@ -70,10 +70,10 @@ int open_input_file(char *name)
  return file;
 }
 
-char *get_memory(long int size)
+char *get_memory(const size_t size)
 {
  char *memory=NULL;
- memory=(char*)calloc(size,1);
+ memory=(char*)calloc(size,sizeof(char));
  if(memory==NULL)
  {
   puts("Can't allocate memory");
@@ -82,13 +82,13 @@ char *get_memory(long int size)
  return memory;
 }
 
-void corrupt_file(char *target)
+void corrupt_file(const char *target)
 {
  int output;
- const long int block_length=33554432;
+ const size_t block_length=33554432;
  char *data=NULL;
  long long int index,size;
- long int block;
+ size_t block;
  output=open_input_file(target);
  size=get_file_size(output);
  index=0;
@@ -96,25 +96,25 @@ void corrupt_file(char *target)
  data=get_memory(block);
  while(index<size)
  {
-  if(size-index<=block_length)
+  if(size-index<=(long long int)block_length)
   {
-   block=size-index;
+   block=(size_t)size-(size_t)index;
   }
-  show_progress(index+block,size);
+  show_progress(index+(long long int)block,size);
   if(write(output,data,block)==-1)
   {
    printf("\n");
    puts("Can't totally wipe the target file");
    break;
   }
-  index+=block;
+  index+=(long long int)block;
  }
  free(data);
  printf("\n");
  close(output);
 }
 
-void delete_file(char *target)
+void delete_file(const char *target)
 {
  if(remove(target)==0)
  {
