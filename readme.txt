@@ -2,7 +2,7 @@
 
                 Securely file destroy tool by Popov Evgeniy Alekseyevich             
 
-                           Version 1.1.4
+                           Version 1.1.5
 
 System requirement
 
@@ -76,4 +76,4 @@ Version history
 1.0.9 - Erasing algorithm has been changed.
 1.1 - 1.1.3 - Small changes.
 1.1.3.0.1 – Documentation was updated.
-1.1.4 - Small changes.
+1.1.4 - 1.1.5 - Small changes.

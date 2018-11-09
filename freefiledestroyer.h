@@ -11,6 +11,7 @@
 #define TARGET_FILE_MODE O_RDWR
 #define file_seek lseek
 #endif
+#include <sys/stat.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <unistd.h>

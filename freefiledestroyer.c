@@ -32,12 +32,12 @@ int main(int argc, char *argv[])
 
 void intro()
 {
- printf("\n");
+ putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.1.4");
+ puts("Version 1.1.5");
  puts("Securely file destroy tool by Popov Evgeniy Alekseyevich,2012-2018 year");
  puts("This program distributed under GNU GENERAL PUBLIC LICENSE");
- printf("\n");
+ putchar('\n');
 }
 
 void show_progress(const long long int start,const long long int end)
@@ -46,7 +46,7 @@ void show_progress(const long long int start,const long long int end)
  progress=start+1;
  progress*=100;
  progress/=end;
- printf("\r");
+ putchar('\r');
  printf("Amount of processed bytes: %lld from %lld. Progress:%lld%%",start,end,progress);
 }
 
@@ -103,14 +103,14 @@ void corrupt_file(const char *target)
   show_progress(index+(long long int)block,size);
   if(write(output,data,block)==-1)
   {
-   printf("\n");
+   putchar('\n');
    puts("Can't totally wipe the target file");
    break;
   }
   index+=(long long int)block;
  }
  free(data);
- printf("\n");
+ putchar('\n');
  close(output);
 }
 
