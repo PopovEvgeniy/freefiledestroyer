@@ -2,7 +2,7 @@
 
                 Securely file destroy tool by Popov Evgeniy Alekseyevich             
 
-                           Version 1.1.5
+                           Version 1.1.5.1
 
 System requirement
 
@@ -42,13 +42,13 @@ Installation steps:
 1. Extract content of source code archive.
 2. Open freefiledestroyer.c file and change platform identifier. Save changes.
 3. Open terminal and go to source code directory.
-4. Run: make install
+4. Run as root: make install
 
 Uninstall steps:
 
 1. Extract content of source code archive.
 2. Open terminal and go to source code directory.
-3. Run: make uninstall
+3. Run as root: make uninstall
 
 Contact
 
@@ -77,3 +77,4 @@ Version history
 1.1 - 1.1.3 - Small changes.
 1.1.3.0.1 – Documentation was updated.
 1.1.4 - 1.1.5 - Small changes.
+1.1.5.1 - Makefile was updated.
