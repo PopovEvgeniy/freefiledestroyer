@@ -2,7 +2,7 @@
 
                 Securely file destroy tool by Popov Evgeniy Alekseyevich             
 
-                           Version 1.1.5.1
+                           Version 1.1.5.2
 
 System requirement
 
@@ -32,7 +32,7 @@ Exit codes
 
 Source code
 
-The program source code was compiled under Open Watcom.
+The program source code was compiled under Open Watcom V2 Fork.
 But you can do it under any modern C compiler.
 
 Install and uninstall under Linux
@@ -78,3 +78,4 @@ Version history
 1.1.3.0.1 – Documentation was updated.
 1.1.4 - 1.1.5 - Small changes.
 1.1.5.1 - Makefile was updated.
+1.1.5.2 - Source code was recompiled under Open Watcom V2 Fork.
