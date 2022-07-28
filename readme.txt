@@ -2,7 +2,7 @@
 
                 Securely file destroy tool by Popov Evgeniy Alekseyevich             
 
-                           Version 1.1.5.2
+                           Version 1.1.6
 
 System requirement
 
@@ -32,7 +32,7 @@ Exit codes
 
 Source code
 
-The program source code was compiled under Open Watcom V2 Fork.
+The program source code was compile under Open Watcom V2 Fork.
 But you can do it under any modern C compiler.
 
 Install and uninstall under Linux
@@ -40,9 +40,8 @@ Install and uninstall under Linux
 Installation steps:
 
 1. Extract content of source code archive.
-2. Open freefiledestroyer.c file and change platform identifier. Save changes.
-3. Open terminal and go to source code directory.
-4. Run as root: make install
+2. Open terminal and go to source code directory.
+3. Run as root: make install
 
 Uninstall steps:
 
@@ -64,18 +63,19 @@ Version history
 0.7 - Erasing algorithm has been changed.
 0.8 - Program speed was increased.
 0.9 - Small changes.
-1.0 - 1.0.1 - Source code portability was improved.
+1.0 - 1.0.1 - Source code portability was improve.
 1.0.2 - Small changes.
-1.0.3 - Random number generator was improved.
+1.0.3 - Random number generator was improve.
 1.0.4 - Small changes.
-1.0.5 -  Source code portability was improved.
+1.0.5 -  Source code portability was improve.
 1.0.6 - Small changes.
-1.0.6.1 - Documentation has been updated
+1.0.6.1 - Documentation has been update.
 1.0.7 - Small changes. Documentation has been updated.
 1.0.8 - Small changes.
 1.0.9 - Erasing algorithm has been changed.
 1.1 - 1.1.3 - Small changes.
-1.1.3.0.1 – Documentation was updated.
+1.1.3.0.1 – Documentation was update.
 1.1.4 - 1.1.5 - Small changes.
-1.1.5.1 - Makefile was updated.
-1.1.5.2 - Source code was recompiled under Open Watcom V2 Fork.
+1.1.5.1 - Makefile was update.
+1.1.5.2 - Source code was recompile under Open Watcom V2 Fork.
+1.1.6 - Small changes.

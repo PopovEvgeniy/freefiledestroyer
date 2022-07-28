@@ -1,10 +1,3 @@
-/*
-Available platform identifier
-MS_WINDOWS - 32 bit Microsoft Windows and 64 bit Microsoft Windows
-UNIX_32 - 32 bit Unix like system
-UNIX_64 - 64 bit Unix like system
-*/
-#define MS_WINDOWS
 #include "freefiledestroyer.h"
 
 void intro();
@@ -34,8 +27,8 @@ void intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.1.5");
- puts("Securely file destroy tool by Popov Evgeniy Alekseyevich,2012-2018 year");
+ puts("Version 1.1.6");
+ puts("Securely file destroy tool by Popov Evgeniy Alekseyevich,2012-2022 year");
  puts("This program distributed under GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
 }
