@@ -1,8 +1,7 @@
 ﻿install:
 	@echo Installation in progress. Please wait
-	@gcc freefiledestroyer.c -g0 -O0 -o freefiledestroyer
-	@chmod ugo+rx freefiledestroyer
-	@cp -f -p freefiledestroyer /bin/
+	@gcc freefiledestroyer.c -g0 -O0 -o /bin/freefiledestroyer
+	@chmod ugo+rx /bin/freefiledestroyer
 	@echo Installation was successfuly complete
 uninstall:
 	@rm -f /bin/freefiledestroyer
