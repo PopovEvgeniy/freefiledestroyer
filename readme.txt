@@ -2,7 +2,7 @@
 
                 Securely file destroy tool by Popov Evgeniy Alekseyevich             
 
-                           Version 1.1.6.1
+                           Version 1.1.7
 
 System requirement
 
@@ -80,3 +80,4 @@ Version history
 1.1.5.2 - Source code recompiled under Open Watcom V2 Fork.
 1.1.6 - Small changes.
 1.1.6.1 - Makefile updated.
+1.1.7 - Small changes.
