@@ -1,8 +1,8 @@
                         FREE FILE DESTROYER
 
-                Securely file destroy tool by Popov Evgeniy Alekseyevich             
+                Securely file erasing tool by Popov Evgeniy Alekseyevich             
 
-                           Version 1.1.7
+                           Version 1.1.8
 
 System requirement
 
@@ -61,7 +61,7 @@ Version history
 0.5 - Small changes.
 0.6 - File engine changed.
 0.7 - Erasing algorithm changed.
-0.8 - Program speed was increased.
+0.8 - Program speed increased.
 0.9 - Small changes.
 1.0 - 1.0.1 - Source code portability improved.
 1.0.2 - Small changes.
@@ -76,8 +76,8 @@ Version history
 1.1 - 1.1.3 - Small changes.
 1.1.3.0.1 – Documentation updated.
 1.1.4 - 1.1.5 - Small changes.
-1.1.5.1 - Makefile was updated.
+1.1.5.1 - Makefile updated.
 1.1.5.2 - Source code recompiled under Open Watcom V2 Fork.
 1.1.6 - Small changes.
 1.1.6.1 - Makefile updated.
-1.1.7 - Small changes.
+1.1.7 - 1.1.8 - Small changes.

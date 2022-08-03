@@ -27,8 +27,8 @@ void intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.1.7");
- puts("Securely file destroy tool by Popov Evgeniy Alekseyevich,2012-2022 year");
+ puts("Version 1.1.8");
+ puts("Securely file erasing tool by Popov Evgeniy Alekseyevich,2012-2022 year");
  puts("This program distributed under GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
 }
@@ -109,12 +109,9 @@ void corrupt_file(const char *target)
 
 void delete_file(const char *target)
 {
- if(remove(target)==0)
+ if(remove(target)!=0)
  {
   puts("Target file successfully destroyed");
- }
- else
- {
   puts("Can't destroy target file");
   exit(3);
  }
