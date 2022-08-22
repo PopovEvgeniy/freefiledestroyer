@@ -2,7 +2,7 @@
 
                 Securely file erasing tool by Popov Evgeniy Alekseyevich             
 
-                           Version 1.1.8
+                           Version 1.1.8.1
 
 System requirement
 
@@ -20,7 +20,7 @@ This program distributed under GNU GENERAL PUBLIC LICENSE.
 
 Usage program
 
-This software is console/text interface program.
+This software is a console/text interface program.
 It takes a file name as command line argument.
 
 Exit codes
@@ -81,3 +81,4 @@ Version history
 1.1.6 - Small changes.
 1.1.6.1 - Makefile updated.
 1.1.7 - 1.1.8 - Small changes.
+1.1.8.1 – Documentation updated.
