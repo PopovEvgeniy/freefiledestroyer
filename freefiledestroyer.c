@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
  intro();
  if (argc!=2)
  {
-  puts("You must get target file name as command line argument!");
+  puts("You must give target file name as command line argument!");
  }
  else
  {
@@ -27,7 +27,7 @@ void intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.1.8");
+ puts("Version 1.1.9");
  puts("Securely file erasing tool by Popov Evgeniy Alekseyevich,2012-2022 year");
  puts("This program distributed under GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
@@ -111,7 +111,6 @@ void delete_file(const char *target)
 {
  if(remove(target)!=0)
  {
-  puts("Target file successfully destroyed");
   puts("Can't destroy target file");
   exit(3);
  }
