@@ -27,8 +27,8 @@ void intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.1.9");
- puts("Securely file erasing tool by Popov Evgeniy Alekseyevich,2012-2022 year");
+ puts("Version 1.2");
+ puts("Securely file erasing tool by Popov Evgeniy Alekseyevich,2012-2023 year");
  puts("This program distributed under GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
 }
@@ -36,8 +36,7 @@ void intro()
 void show_progress(const long long int start,const long long int end)
 {
  long long int progress;
- progress=start+1;
- progress*=100;
+ progress=(start+1)*100;
  progress/=end;
  putchar('\r');
  printf("Amount of processed bytes: %lld from %lld. Progress:%lld%%",start,end,progress);
