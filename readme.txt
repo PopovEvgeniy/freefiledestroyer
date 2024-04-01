@@ -2,11 +2,11 @@
 
                 Securely file erasing tool by Popov Evgeniy Alekseyevich             
 
-                           Version 1.2.1
+                           Version 1.2.2
 
 System requirement
 
-33 megabytes of free RAM
+1 megabytes of free RAM
 64 kilobytes free space on storage media
 
 Program description
@@ -84,3 +84,4 @@ Version history
 1.1.8.1 – Documentation updated.
 1.1.9 - 1.2 - Small changes.
 1.2.1 - Unix specific improvement: processor usage reduced.
+1.2.2 - Memory usage reduced.

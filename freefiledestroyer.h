@@ -3,7 +3,7 @@
 #define file_seek _lseeki64
 #else
 #define _LARGEFILE64_SOURCE
-#define TARGET_FILE_MODE O_RDWR|O_SYNC|O_LARGEFILE
+#define TARGET_FILE_MODE O_RDWR|O_LARGEFILE
 #define file_seek lseek64
 #endif
 
