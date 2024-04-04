@@ -1,10 +1,9 @@
 #ifdef _WIN32
 #define TARGET_FILE_MODE O_RDWR|O_BINARY
-#define file_seek _lseeki64
+#define lseek64 _lseeki64
 #else
 #define _LARGEFILE64_SOURCE
 #define TARGET_FILE_MODE O_RDWR|O_LARGEFILE
-#define file_seek lseek64
 #endif
 
 #include <sys/stat.h>

@@ -2,17 +2,17 @@
 
                 Securely file erasing tool by Popov Evgeniy Alekseyevich             
 
-                           Version 1.2.2
+                           Version 1.2.3.2
 
 System requirement
 
-1 megabytes of free RAM
-64 kilobytes free space on storage media
+Microsoft Windows (Vista or higher) or Unix-like operating system
+1 megabyte of free RAM
 
 Program description
 
 This program let you securely destroy your files.
-It can't be recovered with special software.
+It don't recover with special software.
 
 License
 
@@ -20,7 +20,7 @@ This program distributed under GNU GENERAL PUBLIC LICENSE.
 
 Usage program
 
-This software is a console/text interface program.
+This software is the console/text interface program.
 It takes a file name as command line argument.
 
 Exit codes
@@ -32,8 +32,9 @@ Exit codes
 
 Source code
 
-The program source code compiled under Open Watcom V2 Fork.
-But you can do it under any modern C compiler.
+The source code compiled under Open Watcom V2 Fork.
+You can compile it under any modern C compiler.
+You need Inno setup if you want to create the installer for Microsoft Windows.
 
 Install and uninstall under Linux
 
@@ -85,3 +86,6 @@ Version history
 1.1.9 - 1.2 - Small changes.
 1.2.1 - Unix specific improvement: processor usage reduced.
 1.2.2 - Memory usage reduced.
+1.2.3 - Small changes.
+1.2.3.1 - Installer for Windows added.
+1.2.3.2 - Small bug in installer fixed.
