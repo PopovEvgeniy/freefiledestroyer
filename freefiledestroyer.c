@@ -3,7 +3,7 @@
 void intro();
 void show_progress(const long long int start,const long long int end);
 long long int get_file_size(const int target);
-int open_input_file(const char *name);
+int open_target_file(const char *name);
 char *get_memory(const size_t size);
 void corrupt_file(const char *target);
 void delete_file(const char *target);
@@ -29,7 +29,7 @@ void intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.2.4");
+ puts("Version 1.2.5");
  puts("Securely file erasing tool by Popov Evgeniy Alekseyevich,2012-2024 year");
  puts("This program distributed under GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
@@ -52,10 +52,10 @@ long long int get_file_size(const int target)
  return length;
 }
 
-int open_input_file(const char *name)
+int open_target_file(const char *name)
 {
  int file;
- file=open(name,TARGET_FILE_MODE,S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
+ file=open(name,TARGET_FILE_MODE);
  if (file==-1)
  {
   puts("Can't open target file");
@@ -83,7 +83,7 @@ void corrupt_file(const char *target)
  char *data=NULL;
  long long int index,size;
  size_t block;
- output=open_input_file(target);
+ output=open_target_file(target);
  size=get_file_size(output);
  index=0;
  block=block_length;

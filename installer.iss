@@ -1,7 +1,7 @@
 [Setup]
 AppId={{66BDC81D-C79A-4A38-BD0D-10B715BC78E2}
 AppName=Free file destroyer
-AppVersion=1.2.4
+AppVersion=1.2.5.1
 AppPublisher=Popov Evgeniy Alekseyevich
 AppPublisherURL=https://github.com/PopovEvgeniy
 AppSupportURL=https://github.com/PopovEvgeniy/freefiledestroyer
@@ -19,7 +19,7 @@ MinVersion=6.0.6000
 RestartIfNeededByRun=false
 PrivilegesRequired=none
 UsePreviousUserInfo=false
-UsePreviousAppDir=false
+UsePreviousAppDir=true
 DisableStartupPrompt=true
 DisableReadyPage=true
 UsePreviousSetupType=false
@@ -30,8 +30,6 @@ Source: .\copying.txt; DestDir: {app}; Flags: ignoreversion
 Source: .\freefiledestroyer.exe; DestDir: {app}; Flags: ignoreversion
 Source: .\readme.txt; DestDir: {app}; Flags: ignoreversion
 Source: .\source.zip; DestDir: {app}; Flags: ignoreversion; Components: Source
-Source: .\unregister.bat; DestDir: {app}; Flags: ignoreversion
-Source: .\unregister.reg; DestDir: {app}; Flags: ignoreversion
 
 [Types]
 Name: Normal; Description: Normal installation; Flags: iscustom
@@ -47,7 +45,5 @@ Name: {group}\Source code; Filename: {app}\source.zip; Components: Source
 Name: {group}\Uninstall Free file destroyer; Filename: {app}\unins000.exe
 
 [Registry]
-Root: HKCR; Subkey: *\Shell\Destroy this file via Free file destroyer\Command; ValueType: string; ValueData: {app}\freefiledestroyer.exe %1
-
-[UninstallRun]
-Filename: {app}\unregister.bat
+Root: HKCR; Subkey: *\Shell\Destroy this file via Free file destroyer\command; ValueType: string; ValueData: {app}\freefiledestroyer.exe %1; Flags: uninsdeletekey
+Root: HKCR; Subkey: *\Shell\Destroy this file via Free file destroyer; Flags: uninsdeletekey; ValueType: none
