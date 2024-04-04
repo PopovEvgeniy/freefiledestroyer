@@ -7,6 +7,7 @@
 #endif
 
 #include <sys/stat.h>
+#include <sys/types.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <unistd.h>

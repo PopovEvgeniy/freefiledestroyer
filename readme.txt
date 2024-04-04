@@ -2,7 +2,7 @@
 
                 Securely file erasing tool by Popov Evgeniy Alekseyevich             
 
-                           Version 1.2.3.2
+                           Version 1.2.4
 
 System requirement
 
@@ -29,6 +29,7 @@ Exit codes
 1 - Can't open target file.
 2 - Can't allocate memory.
 3 - Can't destroy target file.
+4 - Can't set target file access rights.
 
 Source code
 
@@ -89,3 +90,4 @@ Version history
 1.2.3 - Small changes.
 1.2.3.1 - Installer for Windows added.
 1.2.3.2 - Small bug in installer fixed.
+1.2.4 - Small bug fixed.

@@ -7,6 +7,7 @@ int open_input_file(const char *name);
 char *get_memory(const size_t size);
 void corrupt_file(const char *target);
 void delete_file(const char *target);
+void set_access(const char *target);
 
 int main(int argc, char *argv[])
 {
@@ -17,6 +18,7 @@ int main(int argc, char *argv[])
  }
  else
  {
+  set_access(argv[1]);
   corrupt_file(argv[1]);
   delete_file(argv[1]);
  }
@@ -27,7 +29,7 @@ void intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.2.3");
+ puts("Version 1.2.4");
  puts("Securely file erasing tool by Popov Evgeniy Alekseyevich,2012-2024 year");
  puts("This program distributed under GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
@@ -88,7 +90,7 @@ void corrupt_file(const char *target)
  data=get_memory(block);
  while(index<size)
  {
-  if(size-index<=(long long int)block_length)
+  if((size-index)<=(long long int)block_length)
   {
    block=(size_t)size-(size_t)index;
   }
@@ -112,6 +114,16 @@ void delete_file(const char *target)
  {
   puts("Can't destroy target file");
   exit(3);
+ }
+
+}
+
+void set_access(const char *target)
+{
+ if (chmod(target,S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH)==-1)
+ {
+  puts("Can't set target file access rights");
+  exit(4);
  }
 
 }
