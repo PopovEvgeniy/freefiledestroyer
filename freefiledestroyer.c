@@ -29,7 +29,7 @@ void intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.2.5");
+ puts("Version 1.2.7");
  puts("Securely file erasing tool by Popov Evgeniy Alekseyevich,2012-2024 year");
  puts("This program distributed under GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
@@ -120,7 +120,7 @@ void delete_file(const char *target)
 
 void set_access(const char *target)
 {
- if (chmod(target,S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH)==-1)
+ if (chmod(target,TARGET_FILE_PERMISSIONS)==-1)
  {
   puts("Can't set target file access rights");
   exit(4);
