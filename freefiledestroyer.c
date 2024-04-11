@@ -2,6 +2,7 @@
 
 void intro();
 void show_progress(const long long int start,const long long int end);
+long long int get_file_position(const int target);
 long long int get_file_size(const int target);
 int open_target_file(const char *name);
 char *get_memory(const size_t size);
@@ -29,7 +30,7 @@ void intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.2.8");
+ puts("Version 1.2.9");
  puts("Securely file erasing tool by Popov Evgeniy Alekseyevich,2012-2024 year");
  puts("This program distributed under GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
@@ -42,6 +43,11 @@ void show_progress(const long long int start,const long long int end)
  progress/=end;
  putchar('\r');
  printf("Amount of processed bytes: %lld from %lld. Progress:%lld%%",start,end,progress);
+}
+
+long long int get_file_position(const int target)
+{
+ return lseek64(target,0,SEEK_CUR);
 }
 
 long long int get_file_size(const int target)
@@ -79,29 +85,28 @@ char *get_memory(const size_t size)
 void corrupt_file(const char *target)
 {
  int output;
- const size_t block_length=4096;
  char *data=NULL;
  long long int index,size;
  size_t block;
  output=open_target_file(target);
  size=get_file_size(output);
  index=0;
- block=block_length;
+ block=4096;
  data=get_memory(block);
- while(index<size)
+ while (index<size)
  {
-  if((size-index)<=(long long int)block_length)
+  if ((size-index)<=(long long int)block)
   {
    block=(size_t)(size-index);
   }
-  show_progress(index+(long long int)block,size);
-  if(write(output,data,block)==-1)
+  if (write(output,data,block)==-1)
   {
    putchar('\n');
    puts("Can't totally wipe the target file");
    break;
   }
-  index+=(long long int)block;
+  index=get_file_position(output);
+  show_progress(index,size);
  }
  free(data);
  putchar('\n');
@@ -110,7 +115,7 @@ void corrupt_file(const char *target)
 
 void delete_file(const char *target)
 {
- if(remove(target)!=0)
+ if (remove(target)!=0)
  {
   puts("Can't destroy target file");
   exit(3);
