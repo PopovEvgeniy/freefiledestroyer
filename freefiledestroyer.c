@@ -29,7 +29,7 @@ void intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.2.7");
+ puts("Version 1.2.8");
  puts("Securely file erasing tool by Popov Evgeniy Alekseyevich,2012-2024 year");
  puts("This program distributed under GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
@@ -92,7 +92,7 @@ void corrupt_file(const char *target)
  {
   if((size-index)<=(long long int)block_length)
   {
-   block=(size_t)size-(size_t)index;
+   block=(size_t)(size-index);
   }
   show_progress(index+(long long int)block,size);
   if(write(output,data,block)==-1)

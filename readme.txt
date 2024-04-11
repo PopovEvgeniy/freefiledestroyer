@@ -2,7 +2,7 @@
 
                 Securely file erasing tool by Popov Evgeniy Alekseyevich             
 
-                           Version 1.2.7
+                           Version 1.2.8
 
 System requirement
 
@@ -95,3 +95,4 @@ Version history
 1.2.5.1 - Installer improved.
 1.2.6 - Visual C++ support improved.
 1.2.7 - Small changes.
+1.2.8 - Small bug fixed.
