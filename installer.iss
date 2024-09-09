@@ -1,12 +1,12 @@
 [Setup]
 AppId={{66BDC81D-C79A-4A38-BD0D-10B715BC78E2}
 AppName=Free file destroyer
-AppVersion=1.3
+AppVersion=1.3.0.1
 AppPublisher=Popov Evgeniy Alekseyevich
 AppPublisherURL=https://github.com/PopovEvgeniy
 AppSupportURL=https://github.com/PopovEvgeniy/freefiledestroyer
 AppUpdatesURL=https://github.com/PopovEvgeniy/freefiledestroyer/releases/latest
-DefaultDirName={autopf}\Free file destroyer
+DefaultDirName={pf}\Free file destroyer
 DefaultGroupName=Free file destroyer
 LicenseFile=.\copying.txt
 InfoBeforeFile=.\readme.txt
