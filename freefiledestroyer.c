@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
  intro();
  if (argc!=2)
  {
-  puts("You must give target file name as command line argument!");
+  puts("You must give a target file name as the command-line argument!");
  }
  else
  {
@@ -30,9 +30,9 @@ void intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.3");
+ puts("Version 1.3.1");
  puts("Securely file erasing tool by Popov Evgeniy Alekseyevich,2012-2024 year");
- puts("This program distributed under GNU GENERAL PUBLIC LICENSE");
+ puts("This program is distributed under GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
 }
 
@@ -42,7 +42,7 @@ void show_progress(const long long int start,const long long int end)
  progress=(start+1)*100;
  progress/=end;
  putchar('\r');
- printf("Amount of processed bytes: %lld from %lld. Progress:%lld%%",start+1,end,progress);
+ printf("Amount of the processed bytes: %lld from %lld. Progress:%lld%%",start+1,end,progress);
 }
 
 long long int get_file_position(const int target)
@@ -64,7 +64,7 @@ int open_target_file(const char *name)
  file=open(name,TARGET_FILE_MODE);
  if (file==-1)
  {
-  puts("Can't open target file");
+  puts("Can't open the target file");
   exit(1);
  }
  return file;
@@ -117,7 +117,7 @@ void delete_file(const char *target)
 {
  if (remove(target)!=0)
  {
-  puts("Can't destroy target file");
+  puts("Can't destroy the target file");
   exit(3);
  }
 
@@ -127,7 +127,7 @@ void set_access(const char *target)
 {
  if (chmod(target,TARGET_FILE_PERMISSIONS)==-1)
  {
-  puts("Can't set target file access rights");
+  puts("Can't set the file access rights");
   exit(4);
  }
 

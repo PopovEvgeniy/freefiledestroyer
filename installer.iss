@@ -1,7 +1,7 @@
 [Setup]
 AppId={{66BDC81D-C79A-4A38-BD0D-10B715BC78E2}
 AppName=Free file destroyer
-AppVersion=1.3.0.1
+AppVersion=1.3.1
 AppPublisher=Popov Evgeniy Alekseyevich
 AppPublisherURL=https://github.com/PopovEvgeniy
 AppSupportURL=https://github.com/PopovEvgeniy/freefiledestroyer
@@ -15,7 +15,7 @@ OutputBaseFilename=freefiledestroyer_setup
 Compression=lzma
 SolidCompression=true
 InternalCompressLevel=max
-MinVersion=6.0.6000
+MinVersion=5.0
 RestartIfNeededByRun=false
 PrivilegesRequired=none
 UsePreviousUserInfo=false

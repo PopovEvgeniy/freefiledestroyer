@@ -2,11 +2,11 @@
 
                 Securely file erasing tool by Popov Evgeniy Alekseyevich             
 
-                           Version 1.3.0.1
+                           Version 1.3.1
 
-System requirement
+System requirements
 
-Microsoft Windows (Vista or higher) or Unix-like operating system
+Microsoft Windows (2000 or higher) or Unix-like operating system
 1 megabyte of free RAM
 
 Program description
@@ -21,15 +21,15 @@ This program is distributed under GNU GENERAL PUBLIC LICENSE.
 Usage program
 
 This software is the console/text interface program.
-It takes a file name as a command-line argument.
+It takes a file name as the command-line argument.
 
 Exit codes
 
-0 - Operation successfully completed.
-1 - Can't open target file.
+0 - Operation was successfully completed.
+1 - Can't open the target file.
 2 - Can't allocate memory.
-3 - Can't destroy target file.
-4 - Can't set target file access rights.
+3 - Can't destroy the target file.
+4 - Can't set the file access rights.
 
 Source code
 
@@ -98,3 +98,4 @@ Version history
 1.2.8 — Small bug fixed.
 1.2.9 — 1.3 — Small changes.
 1.3.0.1 – Documentation updated.
+1.3.1 — Small changes.
