@@ -2,11 +2,11 @@
 
                 Securely file-erasing tool by Popov Evgeniy Alekseyevich             
 
-                           Version 1.3.1.2
+                           Version 1.3.2
 
 System requirements
 
-Microsoft Windows (2000 or higher) or Unix-like operating system
+Microsoft Windows (XP or higher) or Unix-like operating system
 1 megabyte of free RAM
 
 Program description
@@ -33,7 +33,7 @@ Exit codes
 
 Source code
 
-The code was compiled under Open Watcom V2 Fork.
+The code was compiled under Tiny C Compiler.
 You can compile it with any modern C compiler.
 You need Inno setup if you want to create the installer for Microsoft Windows.
 
@@ -100,3 +100,4 @@ Version history
 1.3.0.1: The documentation has been updated.
 1.3.1: The small changes.
 1.3.1.1-1.3.1.2: The documentation has been updated.
+1.3.2: The source code was recompiled under Tiny C Compiler.
