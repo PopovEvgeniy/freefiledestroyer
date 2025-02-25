@@ -2,7 +2,7 @@
 
                 Securely file-erasing tool by Popov Evgeniy Alekseyevich             
 
-                           Version 1.3.2
+                           Version 1.3.3
 
 System requirements
 
@@ -35,7 +35,7 @@ Source code
 
 The code was compiled under Tiny C Compiler.
 You can compile it with any modern C compiler.
-You need Inno setup if you want to create the installer for Microsoft Windows.
+You need Inno Setup if you want to create the installer for Microsoft Windows.
 
 Install and uninstall under Linux
 
@@ -101,3 +101,4 @@ Version history
 1.3.1: The small changes.
 1.3.1.1-1.3.1.2: The documentation has been updated.
 1.3.2: The source code was recompiled under Tiny C Compiler.
+1.3.3: The small changes.
