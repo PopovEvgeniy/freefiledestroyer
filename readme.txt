@@ -2,7 +2,7 @@
 
                 Securely file-erasing tool by Popov Evgeniy Alekseyevich             
 
-                           Version 1.3.3
+                           Version 1.3.4
 
 System requirements
 
@@ -39,17 +39,13 @@ You need Inno Setup if you want to create the installer for Microsoft Windows.
 
 Install and uninstall under Linux
 
-Installation steps:
+Follow these steps:
 
 1. Extract the content of the source code archive.
 2. Open a terminal and go to the source code directory.
-3. Run as root: make install
-
-Uninstall steps:
-
-1. Extract the content of the source code archive.
-2. Open a terminal and go to the source code directory.
-3. Run as root: make uninstall
+3.
+Run as root for install: make install
+Run as root for uninstall: make uninstall
 
 Contact
 
@@ -102,3 +98,4 @@ Version history
 1.3.1.1-1.3.1.2: The documentation has been updated.
 1.3.2: The source code was recompiled under Tiny C Compiler.
 1.3.3: The small changes.
+1.3.4: The code portability has improved.
