@@ -1,12 +1,12 @@
                         FREE FILE DESTROYER
 
-                Securely file-erasing tool by Popov Evgeniy Alekseyevich             
+                Securely file-erasing tool by Popov Evgeniy Alekseyevich      
 
-                           Version 1.3.4
+                           Version 1.3.4.1
 
 System requirements
 
-Microsoft Windows (XP or higher) or Unix-like operating system
+Microsoft Windows (XP or higher) or a Unix-like operating system
 1 megabyte of free RAM
 
 Program description
@@ -16,7 +16,7 @@ It doesn't recover with special software.
 
 License
 
-This program is distributed under GNU GENERAL PUBLIC LICENSE.
+This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 
 Usage program
 
@@ -46,10 +46,6 @@ Follow these steps:
 3.
 Run as root for install: make install
 Run as root for uninstall: make uninstall
-
-Contact
-
-You can send me a letter at tuzik87@inbox.ru.
 
 Version history
 
@@ -99,3 +95,4 @@ Version history
 1.3.2: The source code was recompiled under Tiny C Compiler.
 1.3.3: The small changes.
 1.3.4: The code portability has improved.
+1.3.4.1: The documentation has been updated.
