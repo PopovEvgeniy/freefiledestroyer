@@ -1,12 +1,12 @@
                         FREE FILE DESTROYER
 
-                Securely file-erasing tool by Popov Evgeniy Alekseyevich      
+                The securely file-erasing tool by Popov Evgeniy Alekseyevich      
 
-                           Version 1.3.4.1
+                           Version 1.3.5
 
 System requirements
 
-Microsoft Windows (XP or higher) or a Unix-like operating system
+Microsoft Windows (2000 or higher) or a Unix-like operating system
 1 megabyte of free RAM
 
 Program description
@@ -25,7 +25,7 @@ It takes a file name as the command-line argument.
 
 Exit codes
 
-0: Operation was successfully completed.
+0: The operation was successfully completed.
 1: Can't open the target file.
 2: Can't allocate memory.
 3: Can't destroy the target file.
@@ -33,7 +33,7 @@ Exit codes
 
 Source code
 
-The code was compiled under Tiny C Compiler.
+The code was compiled under Open Watcom.
 You can compile it with any modern C compiler.
 You need Inno Setup if you want to create the installer for Microsoft Windows.
 
@@ -96,3 +96,4 @@ Version history
 1.3.3: The small changes.
 1.3.4: The code portability has improved.
 1.3.4.1: The documentation has been updated.
+1.3.5: The small changes.
