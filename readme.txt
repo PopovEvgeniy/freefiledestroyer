@@ -1,29 +1,29 @@
                         FREE FILE DESTROYER
 
-                The securely file-erasing tool by Popov Evgeniy Alekseyevich      
+                The secure file-erasing tool by Popov Evgeniy Alekseyevich
 
-                           Version 1.3.5
+                           Version 1.3.5.1
 
-System requirements
+System requirements.
 
-Microsoft Windows (2000 or higher) or a Unix-like operating system
-1 megabyte of free RAM
+Microsoft Windows (2000 or higher) or a Unix-like operating system.
+1 megabyte of free RAM.
 
-Program description
+The program description.
 
 This program lets you securely destroy your files.
 It doesn't recover with special software.
 
-License
+License.
 
 This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 
-Usage program
+The program usage.
 
 This software is the console/text interface program.
 It takes a file name as the command-line argument.
 
-Exit codes
+Exit codes.
 
 0: The operation was successfully completed.
 1: Can't open the target file.
@@ -31,23 +31,23 @@ Exit codes
 3: Can't destroy the target file.
 4: Can't set the file access rights.
 
-Source code
+The source code.
 
 The code was compiled under Open Watcom.
 You can compile it with any modern C compiler.
 You need Inno Setup if you want to create the installer for Microsoft Windows.
 
-Install and uninstall under Linux
+Install and uninstall under Linux.
 
 Follow these steps:
 
 1. Extract the content of the source code archive.
 2. Open a terminal and go to the source code directory.
 3.
-Run as root for install: make install
-Run as root for uninstall: make uninstall
+Run as root to install: make install
+Run as root to uninstall: make uninstall
 
-Version history
+Version history.
 
 0.1: The first version.
 0.2: The erasing algorithm has improved.
@@ -97,3 +97,4 @@ Version history
 1.3.4: The code portability has improved.
 1.3.4.1: The documentation has been updated.
 1.3.5: The small changes.
+1.3.5.1: The documentation has been updated.
