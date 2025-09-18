@@ -1,7 +1,7 @@
 [Setup]
 AppId={{66BDC81D-C79A-4A38-BD0D-10B715BC78E2}
 AppName=Free file destroyer
-AppVersion=1.3.5.1
+AppVersion=1.3.6
 AppPublisher=Popov Evgeniy Alekseyevich
 AppPublisherURL=https://github.com/PopovEvgeniy
 AppSupportURL=https://github.com/PopovEvgeniy/freefiledestroyer

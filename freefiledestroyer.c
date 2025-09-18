@@ -29,8 +29,8 @@ void intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.3.5");
- puts("The securely file erasing tool by Popov Evgeniy Alekseyevich,2012-2025 year");
+ puts("Version 1.3.6");
+ puts("The secure file-erasing tool by Popov Evgeniy Alekseyevich,2012-2025 year");
  puts("This program is distributed under the GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
 }

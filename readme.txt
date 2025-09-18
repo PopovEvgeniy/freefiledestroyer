@@ -2,7 +2,7 @@
 
                 The secure file-erasing tool by Popov Evgeniy Alekseyevich
 
-                           Version 1.3.5.1
+                           Version 1.3.6
 
 System requirements.
 
@@ -98,3 +98,4 @@ Version history.
 1.3.4.1: The documentation has been updated.
 1.3.5: The small changes.
 1.3.5.1: The documentation has been updated.
+1.3.6: The small changes.
