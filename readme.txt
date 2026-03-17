@@ -2,12 +2,11 @@
 
                 The secure file-erasing tool by Popov Evgeniy Alekseyevich
 
-                           Version 1.3.6
+                           Version 1.3.7
 
 System requirements.
 
 Microsoft Windows (2000 or higher) or a Unix-like operating system.
-1 megabyte of free RAM.
 
 The program description.
 
@@ -98,4 +97,4 @@ Version history.
 1.3.4.1: The documentation has been updated.
 1.3.5: The small changes.
 1.3.5.1: The documentation has been updated.
-1.3.6: The small changes.
+1.3.6-1.3.7: The small changes.

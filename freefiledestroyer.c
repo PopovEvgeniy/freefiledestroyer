@@ -1,17 +1,17 @@
 #include "freefiledestroyer.h"
 
-void intro();
+void show_intro();
 void show_progress(const long long int start,const long long int end);
 long long int get_file_size(const int target);
 int open_target_file(const char *name);
 char *get_memory(const size_t size);
-void corrupt_file(const char *target);
 void delete_file(const char *target);
 void set_access(const char *target);
+void corrupt_file(const char *target);
 
 int main(int argc, char *argv[])
 {
- intro();
+ show_intro();
  if (argc!=2)
  {
   puts("You must give a target file name as the command-line argument!");
@@ -25,23 +25,20 @@ int main(int argc, char *argv[])
  return 0;
 }
 
-void intro()
+void show_intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.3.6");
- puts("The secure file-erasing tool by Popov Evgeniy Alekseyevich,2012-2025 year");
+ puts("Version 1.3.7");
+ puts("The secure file-erasing tool by Popov Evgeniy Alekseyevich,2012-2026 year");
  puts("This program is distributed under the GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
 }
 
-void show_progress(const long long int start,const long long int end)
+void show_progress(const long long int start,const long long int stop)
 {
- long long int progress;
- progress=(start+1)*100;
- progress/=end;
  putchar('\r');
- printf("Amount of the processed bytes: %lld from %lld. The progress:%lld%%",start,end,progress);
+ printf("The current position: %lld.The end data position: %lld. The operation progress:%lld%%",start,stop,(start*100)/stop);
 }
 
 long long int get_file_size(const int target)
@@ -76,37 +73,6 @@ char *get_memory(const size_t size)
  return memory;
 }
 
-void corrupt_file(const char *target)
-{
- int output;
- char *data=NULL;
- long long int index,size;
- size_t block;
- output=open_target_file(target);
- size=get_file_size(output);
- index=0;
- block=4096;
- data=get_memory(block);
- while (index<size)
- {
-  if ((size-index)<=(long long int)block)
-  {
-   block=(size_t)(size-index);
-  }
-  if (write(output,data,block)==-1)
-  {
-   putchar('\n');
-   puts("Can't totally wipe the target file");
-   break;
-  }
-  index=file_seek(output,0,SEEK_CUR);
-  show_progress(index,size);
- }
- free(data);
- putchar('\n');
- close(output);
-}
-
 void delete_file(const char *target)
 {
  if (remove(target)!=0)
@@ -125,4 +91,35 @@ void set_access(const char *target)
   exit(4);
  }
 
+}
+
+void corrupt_file(const char *target)
+{
+ int output;
+ char *data=NULL;
+ long long int index,length;
+ size_t block;
+ output=open_target_file(target);
+ length=get_file_size(output);
+ index=0;
+ block=4096;
+ data=get_memory(block);
+ while (index<length)
+ {
+  if ((length-index)<=(long long int)block)
+  {
+   block=(size_t)(length-index);
+  }
+  if (write(output,data,block)==-1)
+  {
+   putchar('\n');
+   puts("Can't totally wipe the target file");
+   break;
+  }
+  index=file_seek(output,0,SEEK_CUR);
+  show_progress(index,length);
+ }
+ free(data);
+ putchar('\n');
+ close(output);
 }
