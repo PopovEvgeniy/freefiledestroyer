@@ -12,7 +12,7 @@ void corrupt_file(const char *target);
 int main(int argc, char *argv[])
 {
  show_intro();
- if (argc!=2)
+ if (argc<2)
  {
   puts("You must give a target file name as the command-line argument!");
  }
@@ -29,7 +29,7 @@ void show_intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.3.7");
+ puts("Version 1.3.8");
  puts("The secure file-erasing tool by Popov Evgeniy Alekseyevich,2012-2026 year");
  puts("This program is distributed under the GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
@@ -51,14 +51,14 @@ long long int get_file_size(const int target)
 
 int open_target_file(const char *name)
 {
- int file;
- file=open(name,TARGET_FILE_MODE);
- if (file==-1)
+ int target;
+ target=open(name,TARGET_FILE_MODE);
+ if (target==-1)
  {
   puts("Can't open the target file");
   exit(1);
  }
- return file;
+ return target;
 }
 
 char *get_memory(const size_t size)
