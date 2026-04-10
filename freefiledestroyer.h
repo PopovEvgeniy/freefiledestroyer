@@ -21,9 +21,11 @@
 #define TARGET_FILE_MODE O_RDWR|O_BINARY
 #define TARGET_FILE_PERMISSIONS S_IREAD|S_IWRITE
 #define file_seek _lseeki64
+#define file_sync _commit
 #else
 #include <unistd.h>
 #define TARGET_FILE_MODE O_RDWR
 #define TARGET_FILE_PERMISSIONS S_IRUSR|S_IWUSR
 #define file_seek lseek
+#define file_sync fsync
 #endif

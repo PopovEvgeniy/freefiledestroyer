@@ -29,7 +29,7 @@ void show_intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.3.9");
+ puts("Version 1.4.1");
  puts("The secure file-erasing tool by Popov Evgeniy Alekseyevich,2012-2026 year");
  puts("This program is distributed under the GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
@@ -75,7 +75,11 @@ char *get_memory(const size_t size)
 
 void delete_file(const char *target)
 {
- if (remove(target)!=0)
+ if (remove(target)==0)
+ {
+  puts("The target file has been destroyed");
+ }
+ else
  {
   puts("Can't destroy the target file");
   exit(3);
@@ -119,7 +123,9 @@ void corrupt_file(const char *target)
   index=file_seek(output,0,SEEK_CUR);
   show_progress(index,length);
  }
- free(data);
  putchar('\n');
+ puts("Data synchronization in progress. Please wait");
+ file_sync(output);
  close(output);
+ free(data);
 }
