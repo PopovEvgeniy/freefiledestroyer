@@ -7,6 +7,7 @@ int open_target_file(const char *name);
 char *get_memory(const size_t size);
 void delete_file(const char *target);
 void set_access(const char *target);
+void force_write(const int target,const size_t block,const size_t limit);
 void corrupt_file(const char *target);
 
 int main(int argc, char *argv[])
@@ -29,7 +30,7 @@ void show_intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.4.1");
+ puts("Version 1.4.2");
  puts("The secure file-erasing tool by Popov Evgeniy Alekseyevich,2012-2026 year");
  puts("This program is distributed under the GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
@@ -97,6 +98,18 @@ void set_access(const char *target)
 
 }
 
+void force_write(const int target,const size_t block,const size_t limit)
+{
+ static size_t written=0;
+ written+=block;
+ if (written>=limit)
+ {
+  file_sync(target);
+  written=0;
+ }
+
+}
+
 void corrupt_file(const char *target)
 {
  int output;
@@ -120,6 +133,7 @@ void corrupt_file(const char *target)
    puts("Can't totally wipe the target file");
    break;
   }
+  force_write(output,block,block*block);
   index=file_seek(output,0,SEEK_CUR);
   show_progress(index,length);
  }
