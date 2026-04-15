@@ -1,4 +1,5 @@
 #include "freefiledestroyer.h"
+#include "settings.h"
 
 void show_intro();
 void show_progress(const long long int start,const long long int end);
@@ -30,7 +31,7 @@ void show_intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.4.2");
+ puts("Version 1.4.3");
  puts("The secure file-erasing tool by Popov Evgeniy Alekseyevich,2012-2026 year");
  puts("This program is distributed under the GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
@@ -119,11 +120,11 @@ void corrupt_file(const char *target)
  output=open_target_file(target);
  length=get_file_size(output);
  index=0;
- block=4096;
+ block=DATA_BLOCK_LENGTH;
  data=get_memory(block);
  while (index<length)
  {
-  if ((length-index)<=(long long int)block)
+  if ((length-index)<=DATA_BLOCK_LENGTH)
   {
    block=(size_t)(length-index);
   }
@@ -133,9 +134,9 @@ void corrupt_file(const char *target)
    puts("Can't totally wipe the target file");
    break;
   }
-  force_write(output,block,block*block);
   index=file_seek(output,0,SEEK_CUR);
   show_progress(index,length);
+  force_write(output,block,DATA_LIMIT);
  }
  putchar('\n');
  puts("Data synchronization in progress. Please wait");
