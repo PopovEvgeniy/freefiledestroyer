@@ -31,7 +31,7 @@ void show_intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.4.6");
+ puts("Version 1.4.7");
  puts("The secure file-erasing tool by Popov Evgeniy Alekseyevich,2012-2026 year");
  puts("This program is distributed under the GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
@@ -61,7 +61,7 @@ long long int get_file_size(const int target)
  length=file_seek(target,0,SEEK_END);
  if (length==-1)
  {
-  puts("Can't get the size");
+  puts("Can't get the file size");
   exit(2);
  }
  file_seek(target,0,SEEK_SET);
