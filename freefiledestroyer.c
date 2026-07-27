@@ -3,8 +3,8 @@
 
 void show_intro();
 void show_progress(const long long int start,const long long int end);
-long long int get_file_size(const int target);
 int open_target_file(const char *name);
+long long int get_file_size(const int target);
 char *get_memory(const size_t size);
 void delete_file(const char *target);
 void set_access(const char *target);
@@ -31,7 +31,7 @@ void show_intro()
 {
  putchar('\n');
  puts("FREE FILE DESTROYER");
- puts("Version 1.4.3");
+ puts("Version 1.4.6");
  puts("The secure file-erasing tool by Popov Evgeniy Alekseyevich,2012-2026 year");
  puts("This program is distributed under the GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
@@ -43,17 +43,9 @@ void show_progress(const long long int start,const long long int stop)
  printf("The current position: %lld.The end data position: %lld. The operation progress:%lld%%",start,stop,(start*100)/stop);
 }
 
-long long int get_file_size(const int target)
-{
- long long int length;
- length=file_seek(target,0,SEEK_END);
- file_seek(target,0,SEEK_SET);
- return length;
-}
-
 int open_target_file(const char *name)
 {
- int target;
+ int target=-1;
  target=open(name,TARGET_FILE_MODE);
  if (target==-1)
  {
@@ -63,6 +55,19 @@ int open_target_file(const char *name)
  return target;
 }
 
+long long int get_file_size(const int target)
+{
+ long long int length=0;
+ length=file_seek(target,0,SEEK_END);
+ if (length==-1)
+ {
+  puts("Can't get the size");
+  exit(2);
+ }
+ file_seek(target,0,SEEK_SET);
+ return length;
+}
+
 char *get_memory(const size_t size)
 {
  char *memory=NULL;
@@ -70,7 +75,7 @@ char *get_memory(const size_t size)
  if(memory==NULL)
  {
   puts("Can't allocate memory");
-  exit(2);
+  exit(3);
  }
  return memory;
 }
@@ -84,17 +89,22 @@ void delete_file(const char *target)
  else
  {
   puts("Can't destroy the target file");
-  exit(3);
+  exit(4);
  }
 
 }
 
 void set_access(const char *target)
 {
+ if (target==NULL)
+ {
+  puts("Can't set the file access rights");
+  exit(5);
+ }
  if (chmod(target,TARGET_FILE_PERMISSIONS)==-1)
  {
   puts("Can't set the file access rights");
-  exit(4);
+  exit(5);
  }
 
 }
@@ -113,14 +123,13 @@ void force_write(const int target,const size_t block,const size_t limit)
 
 void corrupt_file(const char *target)
 {
- int output;
  char *data=NULL;
- long long int index,length;
- size_t block;
+ int output=-1;
+ long long int index=0;
+ long long int length=0;
+ size_t block=DATA_BLOCK_LENGTH;
  output=open_target_file(target);
  length=get_file_size(output);
- index=0;
- block=DATA_BLOCK_LENGTH;
  data=get_memory(block);
  while (index<length)
  {

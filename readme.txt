@@ -2,7 +2,7 @@
 
                 The secure file-erasing tool by Popov Evgeniy Alekseyevich
 
-                           Version 1.4.3
+                           Version 1.4.6
 
 System requirements.
 
@@ -26,9 +26,10 @@ Exit codes.
 
 0: The operation was successfully completed.
 1: Can't open the target file.
-2: Can't allocate memory.
-3: Can't destroy the target file.
-4: Can't set the file access rights.
+2: Can't get the file size.
+3: Can't allocate memory.
+4: Can't destroy the target file.
+5: Can't set the file access rights.
 
 The source code.
 
@@ -101,3 +102,4 @@ Version history.
 1.4: The erasing process has improved.
 1.4.1: The small changes.
 1.4.2-1.4.3: The erasing process has improved.
+1.4.4-1.4.6: The small changes.
