@@ -8,6 +8,10 @@
 #define __USE_FILE_OFFSET64
 #endif
 
+#ifdef __HAIKU__
+#define B_USE_POSITIVE_POSIX_ERRORS
+#endif
+
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>

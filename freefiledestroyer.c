@@ -3,7 +3,10 @@
 #include "settings.h"
 
 void show_intro();
+void show_message(const char *message);
 void show_error(const char *message);
+void show_system_error(const char *message,const int code);
+void check_name(const char *name,const char *message,const int code);
 void show_progress(const long long int start,const long long int end);
 int open_target_file(const char *name);
 long long int get_file_position(const int target);
@@ -14,6 +17,7 @@ void delete_file(const char *target);
 void set_access(const char *target);
 void force_write(const int target,const size_t block,const size_t limit);
 void corrupt_file(const char *name);
+void work(const char *name);
 
 int main(int argc, char *argv[])
 {
@@ -25,9 +29,7 @@ int main(int argc, char *argv[])
  }
  else
  {
-  set_access(argv[1]);
-  corrupt_file(argv[1]);
-  delete_file(argv[1]);
+  work(argv[1]);
  }
  return 0;
 }
@@ -35,11 +37,16 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("FREE FILE DESTROYER");
- puts("Version 1.5.9");
+ puts("FREE FILE DESTROYER 1.6.7");
  puts("The secure file-erasing tool by Popov Evgeniy Alekseyevich,2012-2026 year");
  puts("This program is distributed under the GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
+}
+
+void show_message(const char *message)
+{
+ putchar('\n');
+ puts(message);
 }
 
 void show_error(const char *message)
@@ -48,6 +55,29 @@ void show_error(const char *message)
  fputs(message,stderr);
  fputc('\n',stderr);
 }
+
+void show_system_error(const char *message,const int code)
+{
+ show_error(message);
+ fputs(strerror(code),stderr);
+ fputc('\n',stderr);
+}
+
+void check_name(const char *name,const char *message,const int code)
+{
+ size_t length=0;
+ if (name!=NULL)
+ {
+  length=strlen(name);
+ }
+ if (length==0)
+ {
+  show_error(message);
+  exit(code);
+ }
+
+}
+
 
 void show_progress(const long long int start,const long long int stop)
 {
@@ -58,13 +88,10 @@ void show_progress(const long long int start,const long long int stop)
 int open_target_file(const char *name)
 {
  int target=-1;
- if (name!=NULL)
- {
-  target=open(name,TARGET_FILE_MODE);
- }
+ target=open(name,TARGET_FILE_MODE);
  if (target==-1)
  {
-  show_error("Can't open the target file");
+  show_system_error("Can't open the target file",errno);
   exit(OPEN_FILE_ERROR);
  }
  return target;
@@ -76,7 +103,7 @@ long long int get_file_position(const int target)
  position=file_seek(target,0,SEEK_CUR);
  if (position==-1)
  {
-  show_error("Can't get the current position!");
+  show_system_error("Can't get the current position!",errno);
   exit(GET_FILE_POSITION_ERROR);
  }
  return position;
@@ -88,7 +115,7 @@ long long int get_file_size(const int target)
  length=file_seek(target,0,SEEK_END);
  if (length==-1)
  {
-  show_error("Can't get the file size!");
+  show_system_error("Can't get the file size!",errno);
   exit(GET_FILE_SIZE_ERROR);
  }
  file_seek(target,0,SEEK_SET);
@@ -137,7 +164,7 @@ void delete_file(const char *target)
 {
  if (remove(target)!=0)
  {
-  show_error("Can't destroy the target file");
+  show_system_error("Can't destroy the target file",errno);
   exit(DESTROY_FILE_ERROR);
  }
 
@@ -145,14 +172,9 @@ void delete_file(const char *target)
 
 void set_access(const char *target)
 {
- if (target==NULL)
- {
-  show_error("Can't set the file access rights");
-  exit(SET_ACCESS_ERROR);
- }
  if (chmod(target,TARGET_FILE_PERMISSIONS)==-1)
  {
-  show_error("Can't set the file access rights");
+  show_system_error("Can't set the file access rights",errno);
   exit(SET_ACCESS_ERROR);
  }
 
@@ -185,27 +207,34 @@ void corrupt_file(const char *name)
  while (index<length)
  {
   elapsed=length-index;
-  if (elapsed<=DATA_BLOCK_LENGTH)
+  if (elapsed<DATA_BLOCK_LENGTH)
   {
    block=(size_t)elapsed;
   }
   written=write_data(target,data,block);
   if (written==0)
   {
-   putchar('\n');
-   puts("Can't totally wipe the target file");
+   show_message("Can't totally wipe the target file");
    break;
   }
   else
   {
    force_write(target,written,DATA_LIMIT);
+   index=get_file_position(target);
+   show_progress(index,length);
   }
-  index=get_file_position(target);
-  show_progress(index,length);
+
  }
- putchar('\n');
- puts("Data synchronization in progress. Please wait");
+ free(data);
+ show_message("Data synchronization in progress. Please wait");
  file_sync(target);
  close(target);
- free(data);
+}
+
+void work(const char *name)
+{
+ check_name(name,"The target file name is empty",EMPTY_TARGET_NAME_ERROR);
+ set_access(name);
+ corrupt_file(name);
+ delete_file(name);
 }

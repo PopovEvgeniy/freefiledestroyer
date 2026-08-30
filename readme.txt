@@ -2,41 +2,44 @@
 
                 The secure file-erasing tool by Popov Evgeniy Alekseyevich
 
-                           Version 1.5.9
-
-System requirements.
-
-Microsoft Windows (2000 or higher) or a Unix-like operating system.
+                           Version 1.6.7
 
 The program description.
 
 This program lets you securely destroy your files.
 It doesn't recover with special software.
+This program is the console/text interface program.
+It takes a file name as the command-line argument.
+
+The supported operating system list.
+
+This program can be built under one of the following operating systems:
+
+An Unix-like system.
+Haiku.
+Microsoft Windows 2000 or higher.
 
 License.
 
 This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 
-The program usage.
-
-This software is the console/text interface program.
-It takes a file name as the command-line argument.
-
 Exit codes.
 
 0: The operation was successfully completed.
-1: Can't open the target file.
-2: Can't get the current position.
-3: Can't get the file size.
-4: Can't allocate memory.
-5: Can't destroy the target file.
-6: Can't set the file access rights.
-7: You don't get a target file name.
+1: The target file name is empty.
+2: Can't open the target file.
+3: Can't get the current position.
+4: Can't get the file size.
+5: Can't allocate memory.
+6: Can't destroy the target file.
+7: Can't set the file access rights.
+8: You don't get a target file name.
 
 The source code.
 
-The code was compiled under Open Watcom.
-You can compile it with any modern C compiler.
+The source code is compatible with any modern C compiler.
+The source code can be compiled for a wide range of operating systems, but you need to create a makefile or a build script by yourself.
+I provide only two things: the binary file for Windows and the makefile for Linux.
 You need Inno Setup if you want to create the installer for Microsoft Windows.
 
 Install and uninstall under Linux.
@@ -113,4 +116,8 @@ Version history.
 1.5.5: The small changes.
 1.5.6: The file processing has improved.
 1.5.7-1.5.8: The small changes.
-1.5.9: The file processing has improved.
+1.5.9-1.6: The file processing has improved.
+1.6.1-1.6.2: The error handling has improved.
+1.6.3-1.6.5: The small changes.
+1.6.6: Haiku support has been added.
+1.6.7: The small changes.

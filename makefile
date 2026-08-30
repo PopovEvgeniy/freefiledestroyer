@@ -4,5 +4,5 @@ install:
 	@chmod ugo+rx /bin/freefiledestroyer
 	@echo Installation was successfully completed
 uninstall:
-	@rm -f /bin/freefiledestroyer
+	@rm /bin/freefiledestroyer
 	@echo Uninstallation was successfully completed
