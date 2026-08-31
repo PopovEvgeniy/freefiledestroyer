@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("FREE FILE DESTROYER 1.6.7");
+ puts("FREE FILE DESTROYER 1.6.8");
  puts("The secure file-erasing tool by Popov Evgeniy Alekseyevich,2012-2026 year");
  puts("This program is distributed under the GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
@@ -166,6 +166,10 @@ void delete_file(const char *target)
  {
   show_system_error("Can't destroy the target file",errno);
   exit(DESTROY_FILE_ERROR);
+ }
+ else
+ {
+  puts("The target file was successfully destroyed");
  }
 
 }

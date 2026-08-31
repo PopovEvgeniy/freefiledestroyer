@@ -2,7 +2,7 @@
 
                 The secure file-erasing tool by Popov Evgeniy Alekseyevich
 
-                           Version 1.6.7
+                           Version 1.6.8
 
 The program description.
 
@@ -120,4 +120,4 @@ Version history.
 1.6.1-1.6.2: The error handling has improved.
 1.6.3-1.6.5: The small changes.
 1.6.6: Haiku support has been added.
-1.6.7: The small changes.
+1.6.7-1.6.8: The small changes.
