@@ -2,7 +2,7 @@
 
                 The secure file-erasing tool by Popov Evgeniy Alekseyevich
 
-                           Version 1.6.9
+                           Version 1.7.1
 
 The program description.
 
@@ -33,7 +33,7 @@ Exit codes.
 5: Can't allocate memory.
 6: Can't destroy the target file.
 7: Can't set the file access rights.
-8: You don't get a target file name.
+8: The command-line arguments is invalid!
 
 The source code.
 
@@ -121,3 +121,5 @@ Version history.
 1.6.3-1.6.5: The small changes.
 1.6.6: Haiku support has been added.
 1.6.7-1.6.9: The small changes.
+1.7: The file processing has improved.
+1.7.1: The small changes.

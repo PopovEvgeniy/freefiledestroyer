@@ -22,14 +22,19 @@ void work(const char *name);
 int main(int argc, char *argv[])
 {
  show_intro();
- if (argc<2)
+ switch (argc)
  {
+  case 1:
   puts("You must give a target file name as the command-line argument!");
   exit(COMMAND_LINE_ARGUMENTS_ERROR);
- }
- else
- {
+  break;
+  case 2:
   work(argv[1]);
+  break;
+  default:
+  puts("You gave too many command-line arguments");
+  exit(COMMAND_LINE_ARGUMENTS_ERROR);
+  break;
  }
  return 0;
 }
@@ -37,7 +42,7 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("FREE FILE DESTROYER 1.6.9");
+ puts("FREE FILE DESTROYER 1.7.1");
  puts("The secure file-erasing tool by Popov Evgeniy Alekseyevich,2012-2026 year");
  puts("This program is distributed under the GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
@@ -138,10 +143,19 @@ size_t write_data(const int target,const unsigned char *buffer,const size_t leng
 {
  ssize_t written=0;
  size_t total=0;
- for (total=0;total<length;total+=written)
+ while (total<length)
  {
   written=write(target,buffer+total,length-total);
-  if (written<=0)
+  if (written>0)
+  {
+   total+=written;
+  }
+  if (written==0)
+  {
+   total=0;
+   break;
+  }
+  if (written==-1)
   {
    if (try_again==0)
    {
@@ -150,7 +164,6 @@ size_t write_data(const int target,const unsigned char *buffer,const size_t leng
    }
    else
    {
-    written=0;
     continue;
    }
 
