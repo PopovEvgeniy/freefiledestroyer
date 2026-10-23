@@ -2,7 +2,7 @@
 
                 The secure file-erasing tool by Popov Evgeniy Alekseyevich
 
-                           Version 1.7.1
+                           Version 1.7.1.1
 
 The program description.
 
@@ -55,23 +55,23 @@ Run as root to uninstall: make uninstall
 Version history.
 
 0.1: The first version.
-0.2: The erasing algorithm has improved.
+0.2: The erasing algorithm has been improved.
 0.3-0.4: The small optimization in the program source code.
 0.5: The small changes.
-0.6: The file engine has changed.
-0.7: The erasing algorithm has changed.
-0.8: The program speed has increased.
+0.6: The file engine has been changed.
+0.7: The erasing algorithm has been changed.
+0.8: The program speed has been increased.
 0.9: The small changes.
-1.0-1.0.1: The source code portability has improved.
+1.0-1.0.1: The source code portability has been improved.
 1.0.2: The small changes.
-1.0.3: The random number generator has improved.
+1.0.3: The random number generator has been improved.
 1.0.4: The small changes.
-1.0.5: The source code portability has improved.
+1.0.5: The source code portability has been improved.
 1.0.6: The small changes.
 1.0.6.1: The documentation has been updated.
 1.0.7: The small changes. The documentation has been updated.
 1.0.8: The small changes.
-1.0.9: The erasing algorithm has changed.
+1.0.9: The erasing algorithm has been changed.
 1.1-1.1.3: The small changes.
 1.1.3.0.1: The documentation has been updated.
 1.1.4-1.1.5: The small changes.
@@ -89,8 +89,8 @@ Version history.
 1.2.3.2: A small bug in the installer has been fixed.
 1.2.4: A small bug has been fixed.
 1.2.5: The small changes.
-1.2.5.1: The installer has improved.
-1.2.6: Visual C++ support has improved.
+1.2.5.1: The installer has been improved.
+1.2.6: Visual C++ support has been improved.
 1.2.7: The small changes.
 1.2.8: A small bug has been fixed.
 1.2.9-1.3: The small changes.
@@ -99,27 +99,28 @@ Version history.
 1.3.1.1-1.3.1.2: The documentation has been updated.
 1.3.2: The source code was recompiled under Tiny C Compiler.
 1.3.3: The small changes.
-1.3.4: The code portability has improved.
+1.3.4: The code portability has been improved.
 1.3.4.1: The documentation has been updated.
 1.3.5: The small changes.
 1.3.5.1: The documentation has been updated.
 1.3.6-1.3.9: The small changes.
-1.4: The erasing process has improved.
+1.4: The erasing process has been improved.
 1.4.1: The small changes.
-1.4.2-1.4.3: The erasing process has improved.
+1.4.2-1.4.3: The erasing process has been improved.
 1.4.4-1.4.7: The small changes.
-1.4.8-1.4.9: The error handling has improved.
+1.4.8-1.4.9: The error handling has been improved.
 1.5-1.5.2: The small changes.
-1.5.3: The file processing has improved.
+1.5.3: The file processing has been improved.
 1.5.4: The small changes.
 1.5.4.1: The documentation has been updated.
 1.5.5: The small changes.
-1.5.6: The file processing has improved.
+1.5.6: The file processing has been improved.
 1.5.7-1.5.8: The small changes.
-1.5.9-1.6: The file processing has improved.
-1.6.1-1.6.2: The error handling has improved.
+1.5.9-1.6: The file processing has been improved.
+1.6.1-1.6.2: The error handling has been improved.
 1.6.3-1.6.5: The small changes.
 1.6.6: Haiku support has been added.
 1.6.7-1.6.9: The small changes.
-1.7: The file processing has improved.
+1.7: The file processing has been improved.
 1.7.1: The small changes.
+1.7.1.1: The documentation has been updated.
