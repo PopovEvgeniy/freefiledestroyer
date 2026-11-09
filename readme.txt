@@ -2,7 +2,7 @@
 
                 The secure file-erasing tool by Popov Evgeniy Alekseyevich
 
-                           Version 1.7.1.1
+                           Version 1.7.2
 
 The program description.
 
@@ -15,7 +15,7 @@ The supported operating system list.
 
 This program can be built under one of the following operating systems:
 
-An Unix-like system.
+Unix-like system.
 Haiku.
 Microsoft Windows 2000 or higher.
 
@@ -33,7 +33,7 @@ Exit codes.
 5: Can't allocate memory.
 6: Can't destroy the target file.
 7: Can't set the file access rights.
-8: The command-line arguments is invalid!
+8: The command-line arguments are invalid!
 
 The source code.
 
@@ -86,13 +86,13 @@ Version history.
 1.2.2: The memory usage has been reduced.
 1.2.3: The small changes.
 1.2.3.1: The installer for Windows has been added.
-1.2.3.2: A small bug in the installer has been fixed.
-1.2.4: A small bug has been fixed.
+1.2.3.2: A minor bug in the installer has been fixed.
+1.2.4: A minor bug has been fixed.
 1.2.5: The small changes.
 1.2.5.1: The installer has been improved.
 1.2.6: Visual C++ support has been improved.
 1.2.7: The small changes.
-1.2.8: A small bug has been fixed.
+1.2.8: A minor bug has been fixed.
 1.2.9-1.3: The small changes.
 1.3.0.1: The documentation has been updated.
 1.3.1: The small changes.
@@ -124,3 +124,4 @@ Version history.
 1.7: The file processing has been improved.
 1.7.1: The small changes.
 1.7.1.1: The documentation has been updated.
+1.7.2: The file processing has been improved.

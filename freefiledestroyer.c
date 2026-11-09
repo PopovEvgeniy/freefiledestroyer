@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
   work(argv[1]);
   break;
   default:
-  puts("You gave too many command-line arguments");
+  show_error("You gave too many command-line arguments");
   exit(COMMAND_LINE_ARGUMENTS_ERROR);
   break;
  }
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("FREE FILE DESTROYER 1.7.1");
+ puts("FREE FILE DESTROYER 1.7.2");
  puts("The secure file-erasing tool by Popov Evgeniy Alekseyevich,2012-2026 year");
  puts("This program is distributed under the GNU GENERAL PUBLIC LICENSE");
  putchar('\n');
@@ -88,6 +88,7 @@ void show_progress(const long long int start,const long long int stop)
 {
  putchar('\r');
  printf("The current position: %lld.The end data position: %lld. The operation progress:%lld%%",start,stop,(start*100)/stop);
+ fflush(stdout);
 }
 
 int open_target_file(const char *name)
@@ -123,7 +124,11 @@ long long int get_file_size(const int target)
   show_system_error("Can't get the file size!",errno);
   exit(GET_FILE_SIZE_ERROR);
  }
- file_seek(target,0,SEEK_SET);
+ if (file_seek(target,0,SEEK_SET)==-1)
+ {
+  show_system_error("Can't rewind the file!",errno);
+  exit(REWIND_FILE_ERROR);
+ }
  return length;
 }
 
