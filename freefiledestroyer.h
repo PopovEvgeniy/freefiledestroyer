@@ -2,6 +2,12 @@
   #pragma warning(disable : 4996)
 #endif
 
+#ifndef __WATCOMC__
+#define SYNCHRONIZATION_ERROR -1
+#else
+#define SYNCHRONIZATION_ERROR 0
+#endif
+
 #ifndef _WIN32
 #define _FILE_OFFSET_BITS 64
 #endif

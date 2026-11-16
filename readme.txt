@@ -2,7 +2,7 @@
 
                 The secure file-erasing tool by Popov Evgeniy Alekseyevich
 
-                           Version 1.7.2
+                           Version 1.7.6
 
 The program description.
 
@@ -21,7 +21,7 @@ Microsoft Windows 2000 or higher.
 
 License.
 
-This program is distributed under the GNU GENERAL PUBLIC LICENSE.
+This program is distributed under the GNU GENERAL PUBLIC LICENSE (version 2 or later) terms.
 
 Exit codes.
 
@@ -29,11 +29,15 @@ Exit codes.
 1: The target file name is empty.
 2: Can't open the target file.
 3: Can't get the current position.
-4: Can't get the file size.
-5: Can't allocate memory.
-6: Can't destroy the target file.
-7: Can't set the file access rights.
-8: The command-line arguments are invalid!
+4: Can't get the file size!
+5: Can't rewind the file!
+6: Can't allocate memory.
+7: The number of written bytes is invalid: 0
+8: Can't write data!
+9: Can't synchronize data!
+10: Can't destroy the target file.
+11: Can't set the file access rights.
+12: The command-line arguments are invalid!
 
 The source code.
 
@@ -124,4 +128,5 @@ Version history.
 1.7: The file processing has been improved.
 1.7.1: The small changes.
 1.7.1.1: The documentation has been updated.
-1.7.2: The file processing has been improved.
+1.7.2-1.7.5: The file processing has been improved.
+1.7.6: The small changes.

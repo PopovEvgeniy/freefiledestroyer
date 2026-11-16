@@ -13,6 +13,7 @@ long long int get_file_position(const int target);
 long long int get_file_size(const int target);
 unsigned char *get_memory(const size_t size);
 size_t write_data(const int target,const unsigned char *buffer,const size_t length);
+void sync_data(const int target);
 void delete_file(const char *target);
 void set_access(const char *target);
 void force_write(const int target,const size_t block,const size_t limit);
@@ -25,7 +26,7 @@ int main(int argc, char *argv[])
  switch (argc)
  {
   case 1:
-  puts("You must give a target file name as the command-line argument!");
+  show_message("You must give a target file name as the command-line argument!");
   exit(COMMAND_LINE_ARGUMENTS_ERROR);
   break;
   case 2:
@@ -42,10 +43,9 @@ int main(int argc, char *argv[])
 void show_intro()
 {
  putchar('\n');
- puts("FREE FILE DESTROYER 1.7.2");
+ puts("FREE FILE DESTROYER 1.7.6");
  puts("The secure file-erasing tool by Popov Evgeniy Alekseyevich,2012-2026 year");
- puts("This program is distributed under the GNU GENERAL PUBLIC LICENSE");
- putchar('\n');
+ puts("This program is distributed under the GNU GENERAL PUBLIC LICENSE (version 2 or later) terms");
 }
 
 void show_message(const char *message)
@@ -157,15 +157,15 @@ size_t write_data(const int target,const unsigned char *buffer,const size_t leng
   }
   if (written==0)
   {
-   total=0;
-   break;
+   show_error("The number of written bytes is invalid: 0");
+   exit(WRITE_ZERO_BYTES_ERROR);
   }
   if (written==-1)
   {
    if (try_again==0)
    {
-    total=0;
-    break;
+    show_system_error("Can't write data!",errno);
+    exit(WRITE_DATA_ERROR);
    }
    else
    {
@@ -176,6 +176,20 @@ size_t write_data(const int target,const unsigned char *buffer,const size_t leng
 
  }
  return total;
+}
+
+void sync_data(const int target)
+{
+ while (file_sync(target)==SYNCHRONIZATION_ERROR)
+ {
+  if (try_again==0)
+  {
+   show_system_error("Can't synchronize data!",errno);
+   exit(SYNC_DATA_ERROR);
+  }
+
+ }
+
 }
 
 void delete_file(const char *target)
@@ -208,7 +222,7 @@ void force_write(const int target,const size_t block,const size_t limit)
  written+=block;
  if (written>=limit)
  {
-  file_sync(target);
+  sync_data(target);
   written=0;
  }
 
@@ -234,22 +248,13 @@ void corrupt_file(const char *name)
    block=(size_t)elapsed;
   }
   written=write_data(target,data,block);
-  if (written==0)
-  {
-   show_message("Can't totally wipe the target file");
-   break;
-  }
-  else
-  {
-   force_write(target,written,DATA_LIMIT);
-   index=get_file_position(target);
-   show_progress(index,length);
-  }
-
+  force_write(target,written,DATA_LIMIT);
+  index=get_file_position(target);
+  show_progress(index,length);
  }
  free(data);
  show_message("Data synchronization in progress. Please wait");
- file_sync(target);
+ sync_data(target);
  close(target);
 }
 
